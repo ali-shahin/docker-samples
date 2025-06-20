@@ -57,7 +57,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ vars.DOCKER_USERNAME }}/docker-python-sample:latest
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/docker-python-sample:latest
 
   # deploy:
   #   needs: docker
@@ -71,7 +71,7 @@ jobs:
   #         username: ${{ secrets.USERNAME }}
   #         key: ${{ secrets.SSH_KEY }}
   #         script: |
-  #           docker pull -b python-sample ${{ vars.DOCKER_USERNAME }}/docker-python-sample:latest
+  #           docker pull -b python-sample ${{ vars.DOCKERHUB_USERNAME }}/docker-python-sample:latest
   #           docker stop python-app || true
   #           docker rm python-app || true
-  #           docker run -d --name python-app -p 80:80 ${{ vars.DOCKER_USERNAME }}/docker-python-sample:latest
+  #           docker run -d --name python-app -p 80:80 ${{ vars.DOCKERHUB_USERNAME }}/docker-python-sample:latest
